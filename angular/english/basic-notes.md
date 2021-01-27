@@ -8,7 +8,7 @@ To create a component manually, we must first create a folder with the name of t
 
 Or we can we the Angular CLI command
 
-```text
+```javascript
 ng g c my-awesome-component
 ```
 
@@ -24,13 +24,13 @@ ng g c my-awesome-component
 
 ### How data flows from one component to another
 
-```text
+```javascript
 @Input() item: string;
 ```
 
 @Input is the way Angular makes data flows from parents components to its children components. 
 
-```text
+```javascript
 @Output() newItemEvent = new EventEmitter<string>();
 ```
 
@@ -40,7 +40,7 @@ ng g c my-awesome-component
 
 We can use the CLI command to fire linting
 
-```text
+```javascript
 ng lint
 ```
 
@@ -48,13 +48,13 @@ ng lint
 
 Modules can be created by the Angular CLI command
 
-```text
+```javascript
 ng g m my-awesome-module
 ```
 
 a module can contain its own set of routes, this can be done by adding the following flag when the module is created
 
-```text
+```javascript
 ng g m my-awesome-module --routing
 ```
 
@@ -64,13 +64,13 @@ Directives are use to manipulate an element from the DOM, it can be use to chang
 
 It can be created using CLI
 
-```text
+```javascript
 ng g d my-awesome-directive
 ```
 
 similarly, custom pipes can be created using the CLI
 
-```text
+```javascript
 ng g p my-awesome-pipe
 ```
 
@@ -78,7 +78,7 @@ ng g p my-awesome-pipe
 
 Angular services are used as data providers to modules and components. Services can be created using the CLI command
 
-```text
+```javascript
 ng g s my-awesome-service
 ```
 
@@ -86,7 +86,7 @@ ng g s my-awesome-service
 
 Angular also provides an easy way to inject dependencies and reduce the complexity of the components and modules. One way DI can be implemented is by adding the dependency as a class attribute via the constructor.
 
-```text
+```javascript
 constructor(private fb: FormBuilder) {}
 ```
 
@@ -96,7 +96,7 @@ To implement LL in Angular the app needs to be modularized. One way this can be 
 
 Once the app is modularized then the file app-routing.module.ts will look like this sample
 
-```text
+```javascript
 {
     path: 'home',
     loadChildren: () =>
@@ -112,11 +112,11 @@ Guards can be used as middleware,  one of the benefits of guards is to protect c
 
 Guards can be created using the command
 
-```text
+```javascript
 ng g g my-awesome-guard
 ```
 
-```text
+```javascript
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
@@ -147,7 +147,7 @@ export class AdminGuard implements CanActivate {
 
 Angular provides it´s own module to process http request. It is important to remember that the http module of angular returns Observable objects, so in order to consume the result of the request we will need to use the method subscribe in order to have access to the data.
 
-```text
+```javascript
   fetchProduct() {
     this.productsService.getAllProducts().subscribe((products) => {
       this.products = products;
@@ -157,7 +157,7 @@ Angular provides it´s own module to process http request. It is important to re
 
 We can easily map the response from a http request by declaring the desired type next to the method name.
 
-```text
+```javascript
   getAllProducts() {
     return this.http.get<Product[]>(environment.url_api);
   }
@@ -169,7 +169,7 @@ the previous approach can be applied in many scenarios.
 
 Partial can be used as a wrapper of any type. Partial set all the attributes from a type as optional. This is very useful when we want to perform patch request in order to update a record in the database.
 
-```text
+```javascript
   updateProduct(id: string, set: Partial<Product>) {
     return this.http.put(`${environment.url_api}/${id}`, set);
   }
