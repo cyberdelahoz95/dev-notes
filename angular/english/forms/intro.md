@@ -14,3 +14,38 @@ Using a FormControl class allows us to subscribe to changes in our form, for exa
 
 Additionally, being subscripted to changes in the form data enables us to perform validations and implement observables to extend the behavior of the data flow, for example we can modify the data before is received by the controller or before sending the data to our backend.
 
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+})
+export class FooterComponent implements OnInit {
+  emailField: FormControl;
+
+  constructor() {
+    this.emailField = new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(10),
+      Validators.email,
+    ]);
+  }
+  ngOnInit(): void {}
+  registerMail() {
+    if (this.emailField.valid) {
+      console.log('processing subscription');
+    }
+  }
+}
+```
+
+```javascript
+this.emailField.valueChanges.subscribe();
+```
+
+Previous code can be use to listen on changes in the data.
+
