@@ -8,10 +8,13 @@ En este repositorio añado notas personales relacionadas con desarrollo de softw
 
 This repo has been created to contain a set of personal notes related with software development.
 
-### 
 
-### My Sample Projects
+
+### Technologies I am related with
 
 * [Angular](angular/english/)
-  * [https://github.com/cyberdelahoz95/angular-basics](https://github.com/cyberdelahoz95/angular-basics)
+  * Sample Projects
+    * [https://github.com/cyberdelahoz95/angular-basics](https://github.com/cyberdelahoz95/angular-basics)
+* [Docker](https://github.com/cyberdelahoz95/dockercrumbs)
+* [Typescript](https://github.com/cyberdelahoz95/typescript-basics/tree/master/foundamentals)
 

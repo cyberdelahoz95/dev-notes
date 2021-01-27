@@ -1,8 +1,6 @@
 # Table of contents
 
 * [README](README.md)
-* [Typescript](typescript/README.md)
-  * [Samples](typescript/samples.md)
 * [Angular](angular/README.md)
   * [Español](angular/espanol/README.md)
     * [Notas Básicas](angular/espanol/notes.md)
