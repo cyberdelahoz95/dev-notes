@@ -2,7 +2,7 @@
 
 Like in most frontend frameworks and libraries, Angular has been designed to offer a tool to create web components that allows us to develop a modularized application.
 
-### Creating Components
+## Creating Components
 
 To create a component manually, we must first create a folder with the name of the component. Then we create three files, one for template, one for styles and one for typescript. Finally we have to modify the file app.module.ts and import the component and add declarations attribute.
 
@@ -12,7 +12,7 @@ Or we can we the Angular CLI command
 ng g c my-awesome-component
 ```
 
-### Component Lifecycle
+## Component Lifecycle
 
 * constructor
 * ngOnChange
@@ -22,13 +22,13 @@ ng g c my-awesome-component
 * ngOnDestroy
   * This method can be used to kill listeners and avoid memory leaks.
 
-### How data flows from one component to another
+## How data flows from one component to another
 
 ```javascript
 @Input() item: string;
 ```
 
-@Input is the way Angular makes data flows from parents components to its children components. 
+@Input is the way Angular makes data flows from parents components to its children components.
 
 ```javascript
 @Output() newItemEvent = new EventEmitter<string>();
@@ -36,7 +36,7 @@ ng g c my-awesome-component
 
 @Output is the way Angular makes data flows from children components to their parents. Also Output fires events from the children components that can be handle by the parent.
 
-### Linting
+## Linting
 
 We can use the CLI command to fire linting
 
@@ -44,7 +44,7 @@ We can use the CLI command to fire linting
 ng lint
 ```
 
-### Modules
+## Modules
 
 Modules can be created by the Angular CLI command
 
@@ -58,7 +58,7 @@ a module can contain its own set of routes, this can be done by adding the follo
 ng g m my-awesome-module --routing
 ```
 
-### Directives
+## Directives
 
 Directives are use to manipulate an element from the DOM, it can be use to change the native behavior of an element.
 
@@ -74,7 +74,7 @@ similarly, custom pipes can be created using the CLI
 ng g p my-awesome-pipe
 ```
 
-### Services
+## Services
 
 Angular services are used as data providers to modules and components. Services can be created using the CLI command
 
@@ -82,7 +82,7 @@ Angular services are used as data providers to modules and components. Services 
 ng g s my-awesome-service
 ```
 
-### Dependency Injection
+## Dependency Injection
 
 Angular also provides an easy way to inject dependencies and reduce the complexity of the components and modules. One way DI can be implemented is by adding the dependency as a class attribute via the constructor.
 
@@ -90,7 +90,7 @@ Angular also provides an easy way to inject dependencies and reduce the complexi
 constructor(private fb: FormBuilder) {}
 ```
 
-### Lazy Loading
+## Lazy Loading
 
 To implement LL in Angular the app needs to be modularized. One way this can be done is by implementing main pages \(functionalities\) as a module, when this is done, all the required functions, libraries, components, directives, pipes etc. are encapsulated.
 
@@ -103,12 +103,11 @@ Once the app is modularized then the file app-routing.module.ts will look like t
         import('./home/home.module')
             .then((m) => m.HomeModule),
 }
-
 ```
 
-### Guards
+## Guards
 
-Guards can be used as middleware,  one of the benefits of guards is to protect certain routes. So user can only have access to certain routes if guard allows the request to proceed.
+Guards can be used as middleware, one of the benefits of guards is to protect certain routes. So user can only have access to certain routes if guard allows the request to proceed.
 
 Guards can be created using the command
 
@@ -143,7 +142,7 @@ export class AdminGuard implements CanActivate {
 }
 ```
 
-### HTTP Requests
+## HTTP Requests
 
 Angular provides it´s own module to process http request. It is important to remember that the http module of angular returns Observable objects, so in order to consume the result of the request we will need to use the method subscribe in order to have access to the data.
 
@@ -165,7 +164,7 @@ We can easily map the response from a http request by declaring the desired type
 
 the previous approach can be applied in many scenarios.
 
-### Partial
+## Partial
 
 Partial can be used as a wrapper of any type. Partial set all the attributes from a type as optional. This is very useful when we want to perform patch request in order to update a record in the database.
 
