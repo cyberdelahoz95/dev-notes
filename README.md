@@ -8,5 +8,5 @@ En este repositorio añado notas personales relacionadas con desarrollo de softw
 
 This repo has been created to contain a set of personal notes related with software development.
 
-## [SUMMARY](SUMMARY.md)
+## [SUMMARY](https://github.com/cyberdelahoz95/dev-notes/tree/f85b2e7db5be5addb62128f771d2bc9ff4a1e5fc/SUMMARY.md)
 

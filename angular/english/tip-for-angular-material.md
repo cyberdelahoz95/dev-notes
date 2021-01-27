@@ -59,3 +59,7 @@ export class MaterialModule {}
 
 ```
 
+### Schematics
+
+Schematics are commands added to Angular CLI when Angular Material is installed. Schematics are tools to generate solid applications sections using short commands. We can create navigation structures such as side bar, we can create dashboard pages also we can create forms. Everything created via schematics, will contain be created following Material Design principles.
+

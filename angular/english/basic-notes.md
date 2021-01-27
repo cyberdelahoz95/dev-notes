@@ -60,7 +60,7 @@ ng g m my-awesome-module --routing
 
 ### Directives
 
-Directives are use to manipulate an element from the DOM, it can be use to change the native behaviour of an element.
+Directives are use to manipulate an element from the DOM, it can be use to change the native behavior of an element.
 
 It can be created using CLI
 
@@ -82,7 +82,7 @@ Angular services are used as data providers to modules and components. Services 
 ng g s my-awesome-service
 ```
 
-### Depency Injection
+### Dependency Injection
 
 Angular also provides an easy way to inject dependencies and reduce the complexity of the components and modules. One way DI can be implemented is by adding the dependency as a class attribute via the constructor.
 
@@ -108,7 +108,7 @@ Once the app is modularized then the file app-routing.module.ts will look like t
 
 ### Guards
 
-Guards can be used as middlewares,  one of the benefits of guards is to protect certain routes. So user can only have access to certain routes if guard allows the request to proceed.
+Guards can be used as middleware,  one of the benefits of guards is to protect certain routes. So user can only have access to certain routes if guard allows the request to proceed.
 
 Guards can be created using the command
 
@@ -143,5 +143,35 @@ export class AdminGuard implements CanActivate {
 }
 ```
 
+### HTTP Requests
 
+Angular provides it´s own module to process http request. It is important to remember that the http module of angular returns Observable objects, so in order to consume the result of the request we will need to use the method subscribe in order to have access to the data.
+
+```text
+  fetchProduct() {
+    this.productsService.getAllProducts().subscribe((products) => {
+      this.products = products;
+    });
+  }
+```
+
+We can easily map the response from a http request by declaring the desired type next to the method name.
+
+```text
+  getAllProducts() {
+    return this.http.get<Product[]>(environment.url_api);
+  }
+```
+
+the previous approach can be applied in many scenarios.
+
+### Partial
+
+Partial can be used as a wrapper of any type. Partial set all the attributes from a type as optional. This is very useful when we want to perform patch request in order to update a record in the database.
+
+```text
+  updateProduct(id: string, set: Partial<Product>) {
+    return this.http.put(`${environment.url_api}/${id}`, set);
+  }
+```
 
