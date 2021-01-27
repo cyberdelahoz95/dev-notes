@@ -2,6 +2,7 @@
 
 * [README](README.md)
 * [Angular](angular/README.md)
+  * [Typescript](angular/typescript.md)
   * [Español](angular/espanol/README.md)
     * [Notas Básicas](angular/espanol/notes.md)
   * [English](angular/english/README.md)
