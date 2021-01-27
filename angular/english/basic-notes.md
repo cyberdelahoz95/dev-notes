@@ -8,7 +8,7 @@ To create a component manually, we must first create a folder with the name of t
 
 Or we can we the Angular CLI command
 
-```javascript
+```bash
 ng g c my-awesome-component
 ```
 
@@ -40,7 +40,7 @@ ng g c my-awesome-component
 
 We can use the CLI command to fire linting
 
-```javascript
+```bash
 ng lint
 ```
 
@@ -48,13 +48,13 @@ ng lint
 
 Modules can be created by the Angular CLI command
 
-```javascript
+```bash
 ng g m my-awesome-module
 ```
 
 a module can contain its own set of routes, this can be done by adding the following flag when the module is created
 
-```javascript
+```bash
 ng g m my-awesome-module --routing
 ```
 
@@ -64,13 +64,13 @@ Directives are use to manipulate an element from the DOM, it can be use to chang
 
 It can be created using CLI
 
-```javascript
+```bash
 ng g d my-awesome-directive
 ```
 
 similarly, custom pipes can be created using the CLI
 
-```javascript
+```bash
 ng g p my-awesome-pipe
 ```
 
@@ -78,7 +78,7 @@ ng g p my-awesome-pipe
 
 Angular services are used as data providers to modules and components. Services can be created using the CLI command
 
-```javascript
+```bash
 ng g s my-awesome-service
 ```
 
@@ -112,7 +112,7 @@ Guards can be used as middleware,  one of the benefits of guards is to protect c
 
 Guards can be created using the command
 
-```javascript
+```bash
 ng g g my-awesome-guard
 ```
 
