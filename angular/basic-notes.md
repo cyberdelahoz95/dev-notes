@@ -22,3 +22,126 @@ ng g c my-awesome-component
 * ngOnDestroy
   * This method can be used to kill listeners and avoid memory leaks.
 
+### How data flows from one component to another
+
+```text
+@Input() item: string;
+```
+
+@Input is the way Angular makes data flows from parents components to its children components. 
+
+```text
+@Output() newItemEvent = new EventEmitter<string>();
+```
+
+@Output is the way Angular makes data flows from children components to their parents. Also Output fires events from the children components that can be handle by the parent.
+
+### Linting
+
+We can use the CLI command to fire linting
+
+```text
+ng lint
+```
+
+### Modules
+
+Modules can be created by the Angular CLI command
+
+```text
+ng g m my-awesome-module
+```
+
+a module can contain its own set of routes, this can be done by adding the following flag when the module is created
+
+```text
+ng g m my-awesome-module --routing
+```
+
+### Directives
+
+Directives are use to manipulate an element from the DOM, it can be use to change the native behaviour of an element.
+
+It can be created using CLI
+
+```text
+ng g d my-awesome-directive
+```
+
+similarly, custom pipes can be created using the CLI
+
+```text
+ng g p my-awesome-pipe
+```
+
+### Services
+
+Angular services are used as data providers to modules and components. Services can be created using the CLI command
+
+```text
+ng g s my-awesome-service
+```
+
+### Depency Injection
+
+Angular also provides an easy way to inject dependencies and reduce the complexity of the components and modules. One way DI can be implemented is by adding the dependency as a class attribute via the constructor.
+
+```text
+constructor(private fb: FormBuilder) {}
+```
+
+### Lazy Loading
+
+To implement LL in Angular the app needs to be modularized. One way this can be done is by implementing main pages \(functionalities\) as a module, when this is done, all the required functions, libraries, components, directives, pipes etc. are encapsulated.
+
+Once the app is modularized then the file app-routing.module.ts will look like this sample
+
+```text
+{
+    path: 'home',
+    loadChildren: () =>
+        import('./home/home.module')
+            .then((m) => m.HomeModule),
+}
+
+```
+
+### Guards
+
+Guards can be used as middlewares,  one of the benefits of guards is to protect certain routes. So user can only have access to certain routes if guard allows the request to proceed.
+
+Guards can be created using the command
+
+```text
+ng g g my-awesome-guard
+```
+
+```text
+import { Injectable } from '@angular/core';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AdminGuard implements CanActivate {
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    return true;
+  }
+}
+```
+
+
+
