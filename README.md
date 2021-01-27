@@ -13,9 +13,12 @@ This repo has been created to contain a set of personal notes related with softw
 * [Angular](angular/english/)
   * Sample Projects
     * [https://github.com/cyberdelahoz95/angular-basics](https://github.com/cyberdelahoz95/angular-basics)
+* C\#
+  * Sample Projects
+    * [https://github.com/cyberdelahoz95/csharp-basics](https://github.com/cyberdelahoz95/csharp-basics)
 * [Docker](https://github.com/cyberdelahoz95/dockercrumbs)
-* [Typescript](https://github.com/cyberdelahoz95/typescript-basics/tree/master/foundamentals)
 * React
   * Sample Projects
     * [https://smartdock-web.cyberdelahoz.com/login](http://smartdock-web.cyberdelahoz.com/login)
+* [Typescript](https://github.com/cyberdelahoz95/typescript-basics/tree/master/foundamentals)
 
