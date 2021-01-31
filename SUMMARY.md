@@ -13,5 +13,3 @@
 
 ## React
 
-* [React Hooks](react/react-hooks.md)
-
