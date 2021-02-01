@@ -10,7 +10,7 @@ This repo has been created to contain a set of personal notes related with softw
 
 ## Technologies I am related with
 
-* [Angular](angular-1/english/)
+* [Angular](angular/english/)
   * Sample Projects
     * [https://github.com/cyberdelahoz95/angular-basics](https://github.com/cyberdelahoz95/angular-basics)
 * C\#
