@@ -13,6 +13,7 @@
 
 ## React Hooks
 
-* [useState](react-hooks/usestate.md)
 * [README](react-hooks/untitled.md)
+* [useState](react-hooks/usestate.md)
+* [useEffect](react-hooks/useeffect.md)
 
