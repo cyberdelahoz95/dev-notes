@@ -7,6 +7,7 @@
 * [README](react-hooks/readme.md)
 * [useState](react-hooks/usestate.md)
 * [useEffect](react-hooks/useeffect.md)
+* [useContext](react-hooks/usecontext.md)
 
 ## Angular
 
@@ -19,4 +20,8 @@
     * [Custom Validations](angular/english/forms/custom-validations.md)
     * [Intro](angular/english/forms/intro.md)
 * [Untitled](angular/untitled.md)
+
+---
+
+* [useReducer](usereducer.md)
 
