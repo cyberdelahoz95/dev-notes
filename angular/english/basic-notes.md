@@ -180,7 +180,7 @@ This is the main renderer built by Angular. This technology helps to build small
 
 Ivy provides rules to automatically delete portions of Angular that are not used by the app. We do not have to transport the whole size framework for all apps, we ship the code we need.
 
-## Differential Module
+## Differential Loading
 
 This feature of Angular is a mechanism to reduce the number of files downloaded by the client. 
 
