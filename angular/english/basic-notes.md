@@ -188,9 +188,34 @@ When Angular detects the kind of browser the client is using \(version, features
 
 Remember a polyfill is like a patch used to enhance the browser and allow modern web apps to run in old browsers.
 
-Modern browsers require less polyfills and viceversa.
+Modern browsers require less polyfills and vice versa.
 
 ## Smart and Dumb Components Strategy
 
 Basically what we want here is to separate components that contain logic and data process \(smart\) in a folder usually known as container and in another folder named components those presentation components on charge of displaying data.
+
+## Short Imports
+
+This strategy allows us to reduce long paths and also it gives us flexibility when we have to refactor components for any reason.
+
+To take advantage of short imports we have to modify he file _**tsconfig.app.json**_
+
+```javascript
+  "compilerOptions": {
+// other settings
+    "paths":{
+      "@core/*":["src/app/core/*"],
+      "@utils/*":["src/app/utils/*"],
+      "@shared/*":["src/app/shared/*"],
+      "@material/*":["src/app/material/*"],
+    }
+  },
+```
+
+Each attribute of the object path represent a short import, the key will be used directly in the code and the value will be the actual path we are pointing to.
+
+```typescript
+import { SharedModule } from '@shared/shared.module';
+import { MaterialModule } from '@material/material.module';
+```
 
