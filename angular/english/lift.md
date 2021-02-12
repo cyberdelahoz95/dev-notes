@@ -25,7 +25,7 @@ Recognize quickly the role a file has.
 
 No more than 3 level of folders
 
-### TRY DRY
+### Try DRY
 
 Try as much as you can Do not repeating yourself
 
