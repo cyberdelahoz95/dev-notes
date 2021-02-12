@@ -190,3 +190,7 @@ Remember a polyfill is like a patch used to enhance the browser and allow modern
 
 Modern browsers require less polyfills and viceversa.
 
+## Smart and Dumb Components Strategy
+
+Basically what we want here is to separate components that contain logic and data process \(smart\) in a folder usually known as container and in another folder named components those presentation components on charge of displaying data.
+
