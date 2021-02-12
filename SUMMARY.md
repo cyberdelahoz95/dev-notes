@@ -20,6 +20,7 @@
   * [Basic Notes](angular/english/basic-notes.md)
   * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
   * [Forms](angular/english/forms/README.md)
+    * [Architect API](angular/english/forms/architect-api.md)
     * [Custom Validations](angular/english/forms/custom-validations.md)
     * [Intro](angular/english/forms/intro.md)
 

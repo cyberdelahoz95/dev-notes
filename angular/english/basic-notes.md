@@ -174,3 +174,19 @@ Partial can be used as a wrapper of any type. Partial set all the attributes fro
   }
 ```
 
+## Ivy
+
+This is the main renderer built by Angular. This technology helps to build small size apps, faster compilation, easier and faster debugging.
+
+Ivy provides rules to automatically delete portions of Angular that are not used by the app. We do not have to transport the whole size framework for all apps, we ship the code we need.
+
+## Differential Module
+
+This feature of Angular is a mechanism to reduce the number of files downloaded by the client. 
+
+When Angular detects the kind of browser the client is using \(version, features of the browser, etc.\) select which polyfill should be downloaded. 
+
+Remember a polyfill is like a patch used to enhance the browser and allow modern web apps to run in old browsers.
+
+Modern browsers require less polyfills and viceversa.
+
