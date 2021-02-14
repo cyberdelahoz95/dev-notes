@@ -22,6 +22,7 @@
   * [Architect API](angular/english/architect-api.md)
   * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
   * [Forms](angular/english/forms/README.md)
+    * [Reactivity](angular/english/forms/reactivity.md)
     * [Custom Validations](angular/english/forms/custom-validations.md)
     * [Intro](angular/english/forms/intro.md)
 
