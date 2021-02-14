@@ -17,6 +17,7 @@
 * [Español](angular/espanol/README.md)
   * [Notas Básicas](angular/espanol/notes.md)
 * [English](angular/english/README.md)
+  * [Reactivity with RXjs](angular/english/reactivity-with-rxjs.md)
   * [Basic Notes](angular/english/basic-notes.md)
   * [LIFT](angular/english/lift.md)
   * [Architect API](angular/english/architect-api.md)
