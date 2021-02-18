@@ -67,11 +67,11 @@ Sin embargo, en algunos escenarios es necesario u óptimo, mantener la instancia
 useCallback(callbackFun, deps)
 ```
 
-_**deps**_ es un arreglo de dependencias, cada vez que se reciban las mismas dependencias, useCallback retornará la instancia de la función memoizada para dichas dependencias, de esta manera es posible mantener la instancia de la función entre diferentes renderizaciones del componente.
+_**deps**_ es un arreglo de dependencias \(las dependencias son variables comunes y corrientes\), cada vez que se reciban las mismas dependencias, useCallback retornará la instancia de la función memoizada para dichas dependencias, de esta manera es posible mantener la instancia de la función entre diferentes renderizaciones del componente.
 
 ### Cuándo sí usar useCallbak
 
-Piensa en el siguiente caso de uso. Tienes una gran lista de registros que deseas renderizar en un componente llamado BigList.
+Piensa en el siguiente caso de uso. Tienes una gran lista de registros que deseas renderizar en un componente llamado MyBigList.
 
 ```javascript
 import React from 'react';
@@ -87,7 +87,7 @@ function MyBigList({ term, onItemClick }) {
 export default React.memo(MyBigList);
 ```
 
-Para este código queremos enfocarnos principalmente, en la línea 6 y 11. Como puedes ver, para cada item estaremos utilizando un handler para manipular el evento click de cada elemento de la lista de registros. Finalmente usamos **React.memo** para optimizar nuestra lista ya que tiene muchos items
+Para este código queremos enfocarnos principalmente, en la línea 6 y 11. Como puedes ver, para cada item estaremos utilizando un handler para manipular el evento click de cada elemento de la lista de registros. Finalmente usamos **React.memo** para optimizar la renderización de nuestra lista ya que tiene muchos items
 
 Ahora vamos a incluir este componente en un componente padre
 
@@ -108,9 +108,11 @@ export default function MyParent({ term }) {
 }
 ```
 
-Como puedes observar, _**onItemClick**_ es una función memoizada mediante _**useCallback, cada vez que la variable term tenga el mismo valor entre renderizaciones, onItemClick será una instancia existente de la función, no se creará una instancia nueva.**_ 
+Como puedes observar, _**onItemClick**_ es una función memoizada mediante _**useCallback, cada vez que la prop term tenga el mismo valor entre renderizaciones, onItemClick será una instancia existente de la función, no se creará una instancia nueva.**_ 
 
-**¿Por qué es esto cool? Recuerda que nuestra lista MyBigList utiliza React.memo, por lo tanto si queremos optimizar nuestra renderización, es fundamental que las props no cambien, useCallback precisamente logra ese propósito, nuestra función onItemClick no cambiará en tanto la propiedad term no cambie y voulá, estamos usando useCallback de la forma adecuada.**
+**¿Por qué es esto cool? Recuerda que nuestra lista MyBigList utiliza React.memo, por lo tanto si queremos optimizar nuestra renderización, es fundamental que las props no cambien innecesariamente a través del ciclo de vida de la app, useCallback logra precisamente ese propósito, nuestra función onItemClick no cambiará en tanto la propiedad term no cambie y voulá, estamos usando useCallback de la forma adecuada, logrando que la renderización de nuestra lista sea eficiente.**
+
+Cabe señalara que este enfoque no es siempre el mejor, por ejemplo si no es una lista tan extensa, si los datos cambian con mucha frecuencia, tal vez no sea tan aplicable la memoización.
 
  _****_
 
