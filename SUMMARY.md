@@ -31,3 +31,7 @@
     * [Custom Validations](angular/english/forms/custom-validations.md)
     * [Intro](angular/english/forms/intro.md)
 
+---
+
+* [Autenticación en el Front](autenticacion-en-el-front.md)
+
