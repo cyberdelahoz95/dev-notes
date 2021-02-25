@@ -33,5 +33,5 @@
 
 ## Autenticación en web apps con Node Js
 
-* [Intro](autenticacion-en-web-apps-con-node-js/autenticacion-en-el-front.md)
+* [Intro](autenticacion-en-web-apps-con-node-js/readme.md)
 
