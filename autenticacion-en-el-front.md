@@ -12,7 +12,59 @@ Actualmente el stack de seguridad para aplicaciones en node js y otras tecnolog�
 
 **Sesión**, es un registro de información que se comparte entre diferentes request de tipo http \(teniendo en cuenta que estas peticiones no tienene estado\), adicionalmente cuando hay un proceso de autenticación se relaciona la sesión con el usuario autenticado. Naturalmente para poder mantener este registro de datos entre peticiones http se necesita una base de datos en memoria preferiblemente, por ejemplo Redis.
 
-### Sesiones
+### Anatomía JWT
 
+Un token es un estandar del facto que se utiliza como un mecanismo de autenticación para peticiones http, se compone principalmente de 3 partes separadas por un punto.
 
+* **Header:** Contiene el tipo de token, la mayoría de las veces se especifíca como JWT y también en esta parte se describe el tipo de algoritmo de encriptación. Los algoritmos de encriptación pueden ser síncronos o asíncronos, los primeros son algoritmos con los que se encripta y desencripta con la misma llave; los segundos utilizan llave pública y llave privada.
+* **Payload**: aquí viene toda la información específica del usuario, como por ejemplos los permisos que tiene el usuario logueado.
+* **Firma**: Codificación del header y el payload. Esta codificación se realiza mediante el algortimo expresado en la sección header más un secret.
+
+### Autenticación tradicional vs Autenticación con JWT
+
+#### Tradicional
+
+* Se crea una sesión en el servidor y se manda la información de la sesión al navegador en forma de cookie. A partir de allí, todas las peticiones http llevarán la cookie para poder relacionar la petición con la sesión en el servidor.
+* Problemas del enfoque
+  * Las SPAs se ven afectadas ya que su ciclo de vida es mayormente en el cliente, por lo tanto no se le notifica ni se da por enterada en cuanto a cambios en la sesión en el backend.
+  * REST APIs están pensadas para no tener estado, por ende para no tener sesiones.
+  * El control de acceso siempre requiere una revisión en la base de datos, lo que amplia los tiempos de latencia.
+  * Mayor consumo de memoria, más usuarios con sesión mayor uso de memoria.
+
+#### JWT
+
+* No se crea una sesión, sólo se firma un token una vez el usuario se ha autenticado.
+* Todos los request que realice el cliente una vez recibido el token deben llevar dicho token.
+* Ya no hace falta que una SPA trabaje con el backend para saber si el usuario está autenticado. Al tener el token es prueba de que se autenticó en el algún momento del pasado, dependiendo de la expiración del token.
+* Se reduce el consumo de memoria del lado del backend ya que simplemente hace falta determinar que el token fue firmado correctamente y está vigente.
+
+### Firmando un JWT
+
+```javascript
+//index.js
+const jwt = require('jsonwebtoken');
+
+const [, , option, secret, nameOrToken ] = process.argv;
+
+if ( !option || !secret || !nameOrToken) {
+    return console.log("Missing arguments");
+
+}
+
+function signToken(payload, secret) {
+    return jwt.sign (payload, secret);
+}
+
+function verifyToken(token, secret) {
+    return jwt.verify(token, secret);
+}
+
+if(option == 'sign') {
+    console.log(signToken({ sub: nameOrToken}, secret ));
+} else if ( option == 'verify') {
+    console.log(verifyToken(nameOrToken, secret));
+} else {
+    console.log('Option needs to be "sign" or "verify"');
+} 
+```
 
