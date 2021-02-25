@@ -33,5 +33,5 @@
 
 ---
 
-* [Autenticación en el Front](autenticacion-en-el-front.md)
+* [Autenticación en web apps](autenticacion-en-el-front.md)
 
