@@ -72,3 +72,15 @@ if(option == 'sign') {
 } 
 ```
 
+### Cookie
+
+Las cookies son básicamente registros de datos que permiten mejorar la experiencia de usuario. Entre las cookies podemos mencionar las siguientes, según sus tipos:
+
+* Cookie Session: Son cookies de corta vida, en otras palabras expiran en un corto tiempo. Se remueven cuando se cierra el tab o el navegador.
+* Cookies persistentes: Guardan datos por un mayor tiempo y generalmente se usan para capturar información de la experiencia del usuario en la aplicación para mejorar su experiencia al usar el sitio.
+* Secured Cookis: guardan la información de manera cifrada para evitar que terceros malintencionados usen esa data. Suelen usarse en https.
+
+Es importante siempre avisarle al usuario acerca del uso de cookies. Es necesario le consentimiento del usuario.
+
+#### Uso de cookies para una sesión
+
