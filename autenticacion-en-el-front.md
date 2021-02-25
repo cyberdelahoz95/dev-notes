@@ -37,6 +37,10 @@ Un token es un estandar del facto que se utiliza como un mecanismo de autenticac
 * Todos los request que realice el cliente una vez recibido el token deben llevar dicho token.
 * Ya no hace falta que una SPA trabaje con el backend para saber si el usuario está autenticado. Al tener el token es prueba de que se autenticó en el algún momento del pasado, dependiendo de la expiración del token.
 * Se reduce el consumo de memoria del lado del backend ya que simplemente hace falta determinar que el token fue firmado correctamente y está vigente.
+* Problemas
+  * Es decodificable, por lo tanto debemos evitar agregar información sensible en él. Esto puede incluir contraseñas, keys, nùmeros de cuenta, etc.
+  * Si no se establece un tiempo de expiración, podría ser utilizado por un largo período sin ninguna caducidad y constituiría un riesgo de seguridad.
+  * No se debe usar el localStorage ni sessionStorage para guardar los tokens, se debe usar memoria o cookie.
 
 ### Firmando un JWT
 
