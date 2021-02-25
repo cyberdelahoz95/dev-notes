@@ -34,4 +34,5 @@
 ## Autenticación en web apps con Node Js
 
 * [Intro](autenticacion-en-web-apps-con-node-js/readme.md)
+* [Guardando el JWT en una Cookie](autenticacion-en-web-apps-con-node-js/guardando-el-jwt-en-una-cookie.md)
 
