@@ -82,5 +82,3 @@ Las cookies son básicamente registros de datos que permiten mejorar la experien
 
 Es importante siempre avisarle al usuario acerca del uso de cookies. Es necesario le consentimiento del usuario.
 
-#### Uso de cookies para una sesión
-
