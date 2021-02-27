@@ -45,8 +45,6 @@ app.post('/login', (req, res) => {
       res.cookie('token', token, { httpOnly: true });
       
       res.json({ success: 'welcome' });
-    
-    const token = 
 });
 
 app.listen(3000);
