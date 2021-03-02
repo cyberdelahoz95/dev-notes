@@ -13,10 +13,12 @@ import { Product } from './../../core/models/product.model';
   providedIn: 'root',
 })
 export class CartService {
-  // value to be observed
+  // This value is the dynamic value, we want to react to its changes
   private products: Product[] = [];
-  //Observable objeto that sets a channel to convey data to observers
+  // This BehaviorSubject instance defines the way reactivity is going to be hanle
   private cart = new BehaviorSubject<Product[]>([]);
+  // Observable object consume by subscriptors
+  cart$ = this.cart.asObservable();
 
   constructor() {}
 
@@ -29,5 +31,33 @@ export class CartService {
 }
 ```
 
+addToCart method can be used from any component injecting the service.
 
+Now how can we subscribe to this reactive class?
+
+```javascript
+import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { CartService } from '@core/services/cart.service';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
+})
+export class HeaderComponent implements OnInit {
+  total$: Observable<number>;
+
+  constructor(private cartService: CartService) {
+    this.total$ = this.cartService.cart$.pipe(
+      map((products) => {
+        return products.length;
+      })
+    );
+  }
+
+  ngOnInit(): void {}
+}
+```
 
