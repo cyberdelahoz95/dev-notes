@@ -32,6 +32,8 @@
   * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
   * [Environment](angular/english/environment.md)
   * [HTTP responses](angular/english/typing-http-responses.md)
+  * [Firebase](angular/english/firebase/README.md)
+    * [Authentication](angular/english/firebase/authentication.md)
 
 ## Autenticación en web apps con Node Js
 
