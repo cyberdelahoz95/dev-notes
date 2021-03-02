@@ -93,3 +93,13 @@ providers: [{
 
 Note: If we want to use interceptor to store token, it is better to use _**indexDb**_ to store it rather than _**localStorage**_
 
+If we want to store a token or some value in localStorage or any other local technology to store data we can proceed as follows.
+
+```typescript
+loginRestAPI(email:string, password: string){
+    return this.http.post('URL',{email, password}).pipe(tap(dat) => {
+        //store in local storage or any other strategy
+    });
+}
+```
+
