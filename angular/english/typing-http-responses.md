@@ -49,5 +49,5 @@ getFile(){
 }
 ```
 
-Inside subscribe method we can handle a way of open a window or any other functionality to give the use the functionality to save the file
+Inside subscribe method we can handle a way of open a window or any other functionality to give the use the functionality to save the file.
 
