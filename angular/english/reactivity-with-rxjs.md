@@ -13,8 +13,19 @@ import { Product } from './../../core/models/product.model';
   providedIn: 'root',
 })
 export class CartService {
+  // value to be observed
+  private products: Product[] = [];
+  //Observable objeto that sets a channel to convey data to observers
   private cart = new BehaviorSubject<Product[]>([]);
-  // rest of the code
+
+  constructor() {}
+
+  addToCart(product: Product) {
+    // setting new value
+    this.products = [...this.products, product];
+    // sending new value to suscriptors
+    this.cart.next(this.products);
+  }
 }
 ```
 
