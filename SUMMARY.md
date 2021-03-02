@@ -31,7 +31,7 @@
   * [Reactivity with RXjs](angular/english/reactivity-with-rxjs.md)
   * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
   * [Environment](angular/english/environment.md)
-  * [Typing HTTP responses](angular/english/typing-http-responses.md)
+  * [HTTP responses](angular/english/typing-http-responses.md)
 
 ## Autenticación en web apps con Node Js
 
