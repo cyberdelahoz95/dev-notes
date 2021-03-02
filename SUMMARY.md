@@ -21,15 +21,15 @@
 * [Español](angular/espanol/README.md)
   * [Notas Básicas](angular/espanol/notes.md)
 * [English](angular/english/README.md)
-  * [Reactivity with RXjs](angular/english/reactivity-with-rxjs.md)
   * [Basic Notes](angular/english/basic-notes.md)
   * [LIFT](angular/english/lift.md)
   * [Architect API](angular/english/architect-api.md)
-  * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
   * [Forms](angular/english/forms/README.md)
     * [Reactivity](angular/english/forms/reactivity.md)
     * [Custom Validations](angular/english/forms/custom-validations.md)
     * [Intro](angular/english/forms/intro.md)
+  * [Reactivity with RXjs](angular/english/reactivity-with-rxjs.md)
+  * [Tip for Angular Material](angular/english/tip-for-angular-material.md)
 
 ## Autenticación en web apps con Node Js
 
