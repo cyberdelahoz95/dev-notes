@@ -2,7 +2,7 @@
 
 RxJS is a library that allows us to handle reactivity all over the app via subscription publisher pattern.
 
-One common class that we can use to implement this funcionality is _**BehaviorSubject**_ class
+One common class that we can use to implement this functionality is _**BehaviorSubject**_ class
 
 ```typescript
 import { Injectable } from '@angular/core';
@@ -59,5 +59,51 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+```
+
+### Using switchMap to reduce the number of subscriptions
+
+Code we want to optimize
+
+```typescript
+product: Product;
+
+ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+        const id = params.id;
+        this.fetchProduct(id);
+    });
+}
+
+fetchProduct(id: string) {
+    this.productsService.getProduct(id).subscribe((product) => {
+        this.product = product;
+    });
+}
+```
+
+Optimized code
+
+```typescript
+product$: Observable<Product>;
+
+constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService
+) {}
+
+ngOnInit(): void {
+    this.product$ = this.route.params.pipe(
+        switchMap(
+            (params: Params) => this.productsService.getProduct(params.id)
+            )
+        );
+}
+```
+
+Consuming the observable in a component
+
+```markup
+<div *ngIf="(product$ | async) as product">
 ```
 
