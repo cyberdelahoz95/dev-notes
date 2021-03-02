@@ -107,3 +107,14 @@ Consuming the observable in a component
 <div *ngIf="(product$ | async) as product">
 ```
 
+### Handling errors in subscriptions
+
+```typescript
+subscribe(successFunction,
+    error=>{
+    handlingError();
+})
+```
+
+We can use the function handlingError to show logs or event store the event or send it to sentry, etc.
+
