@@ -66,7 +66,7 @@ Interceptors are custom services used to add attributes to our HTTP request, lik
 
 ```typescript
 // auth.interceptor.ts
-export class AuthIntercepto implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
     intercept(request:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>>{
         request = request.clone(
             {
